@@ -40,51 +40,72 @@ let p3 = new Promise((resolve,reject)=>{
 });
 
 Promise.all([p1,p2,p3]).then((value)=>{
+// 	tr.remove();
+// let tr1 = document.createElement("tr");
+// let td1 = document.createElement("td");
+// let td2 = document.createElement("td");
+// tr1.append(td1,td2);
+// output.appendChild(tr1);
+// tr1.classList.add("none");
+
+// let tr2 = document.createElement("tr");
+// let td3 = document.createElement("td");
+// let td4 = document.createElement("td");
+// tr2.append(td3,td4);
+// output.appendChild(tr2);
+// tr2.classList.add("none");
+
+// let tr3 = document.createElement("tr");
+// let td5 = document.createElement("td");
+// let td6 = document.createElement("td");
+// tr3.append(td5,td6);
+// output.appendChild(tr3);
+// tr3.classList.add("none");
+
+// let tr4 = document.createElement("tr");
+// let td7 = document.createElement("td");
+// let td8 = document.createElement("td");
+// tr4.append(td7,td8);
+// output.appendChild(tr4);
+// tr4.classList.add("none");
+// 	td1.innerText = "Promise 1";
+// 	td2.innerText = value[0];
+
+// 	td3.innerText = "Promise 2";
+// 	td4.innerText = value[1];
+
+// 	td5.innerText = "Promise 3";
+// 	td6.innerText = value[2];
+
+// 	td7.innerText = "Total";
+// 	td8.innerText = (value[0]+value[1]+value[2]).toFixed(3);
+
+// 	tr1.classList.remove("none");
+// 	tr2.classList.remove("none");
+// 	tr3.classList.remove("none");
+// 	tr4.classList.remove("none");
+
 	tr.remove();
 
-	let tr1 = document.createElement("tr");
-let td1 = document.createElement("td");
-let td2 = document.createElement("td");
-tr1.append(td1,td2);
-output.appendChild(tr1);
-tr1.classList.add("none");
+    // create and append a new 'tr' for each promise
+    for(let i = 0; i < value.length; i++) {
+        let trNew = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        td1.innerText = `Promise ${i+1}`;
+        td2.innerText = value[i];
+        trNew.append(td1, td2);
+        output.appendChild(trNew);
+    }
 
-let tr2 = document.createElement("tr");
-let td3 = document.createElement("td");
-let td4 = document.createElement("td");
-tr2.append(td3,td4);
-output.appendChild(tr2);
-tr2.classList.add("none");
-
-let tr3 = document.createElement("tr");
-let td5 = document.createElement("td");
-let td6 = document.createElement("td");
-tr3.append(td5,td6);
-output.appendChild(tr3);
-tr3.classList.add("none");
-
-let tr4 = document.createElement("tr");
-let td7 = document.createElement("td");
-let td8 = document.createElement("td");
-tr4.append(td7,td8);
-output.appendChild(tr4);
-tr4.classList.add("none");
-	td1.innerText = "Promise 1";
-	td2.innerText = value[0];
-
-	td3.innerText = "Promise 2";
-	td4.innerText = value[1];
-
-	td5.innerText = "Promise 3";
-	td6.innerText = value[2];
-
-	td7.innerText = "Total";
-	td8.innerText = (value[0]+value[1]+value[2]).toFixed(3);
-
-	tr1.classList.remove("none");
-	tr2.classList.remove("none");
-	tr3.classList.remove("none");
-	tr4.classList.remove("none");
+    // create and append a 'tr' for the total
+    let trTotal = document.createElement("tr");
+    let tdTotal1 = document.createElement("td");
+    let tdTotal2 = document.createElement("td");
+    tdTotal1.innerText = "Total";
+    tdTotal2.innerText = (value[0]+value[1]+value[2]).toFixed(3);
+    trTotal.append(tdTotal1, tdTotal2);
+    output.appendChild(trTotal);
 });
 
 
