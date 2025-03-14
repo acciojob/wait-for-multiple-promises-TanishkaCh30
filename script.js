@@ -1,5 +1,6 @@
 let table = document.querySelector(".table");
 let tr = table.insertRow(1);
+tr.id='loading';
 tr.innerText = "Loading...";
 let tr1 = table.insertRow(1);
 tr1.classList.add("none");
