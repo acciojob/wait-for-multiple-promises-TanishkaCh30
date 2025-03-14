@@ -1,23 +1,37 @@
-let table = document.querySelector(".table");
-let tr = table.insertRow(1);
-tr.id='loading';
+let output = document.querySelector("#output");
+let tr = document.createElement("tr");
+tr.id = 'loading';
 tr.innerText = "Loading...";
-let tr1 = table.insertRow(1);
+output.appendChild(tr);
+
+let tr1 = document.createElement("tr");
+let td1 = document.createElement("td");
+let td2 = document.createElement("td");
+tr1.append(td1,td2);
+output.appendChild(tr1);
 tr1.classList.add("none");
-let td1 = tr1.insertCell(0);
-let td2 = tr1.insertCell(1);
-let tr2= table.insertRow(2);
+
+let tr2 = document.createElement("tr");
+let td3 = document.createElement("td");
+let td4 = document.createElement("td");
+tr2.append(td3,td4);
+output.appendChild(tr2);
 tr2.classList.add("none");
-let td3 = tr2.insertCell(0);
-let td4 = tr2.insertCell(1)
-let tr3= table.insertRow(3);
+
+let tr3 = document.createElement("tr");
+let td5 = document.createElement("td");
+let td6 = document.createElement("td");
+tr3.append(td5,td6);
+output.appendChild(tr3);
 tr3.classList.add("none");
-let td5 = tr3.insertCell(0);
-let td6 = tr3.insertCell(1);
-let tr4 = table.insertRow(4);
-let td7 = tr4.insertCell(0);
-let td8 = tr4.insertCell(1);
+
+let tr4 = document.createElement("tr");
+let td7 = document.createElement("td");
+let td8 = document.createElement("td");
+tr4.append(td7,td8);
+output.appendChild(tr4);
 tr4.classList.add("none");
+
 
 let p1 = new Promise((resolve,reject)=>{
 	let startTime = Date.now();
