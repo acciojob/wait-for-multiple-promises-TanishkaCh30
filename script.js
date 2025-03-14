@@ -1,7 +1,11 @@
 let output = document.querySelector("#output");
 let tr = document.createElement("tr");
+let td = document.createElement("td");
+let tda = document.createElement("td");
+
 tr.id = 'loading';
-tr.innerText = "Loading...";
+td.innerText = "Loading...";
+tr.append(td,tda);
 output.appendChild(tr);
 
 let tr1 = document.createElement("tr");
